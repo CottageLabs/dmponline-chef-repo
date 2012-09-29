@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'dmponline',
+  :path => '../dmp-chef-recipe'
+
+cookbook 'rvm',
+  :git => 'https://github.com/fnichol/chef-rvm'
