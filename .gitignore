@@ -5,3 +5,4 @@
 /cookbooks/
 /tmp/
 .vagrant
+.DS_Store
