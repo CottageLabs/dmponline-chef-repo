@@ -2,8 +2,8 @@
 
 site 'http://community.opscode.com/api/v1'
 
-cookbook 'dmponline',
-  :path => '../dmponline-chef-recipe'
+cookbook 'dmponline', :git => "https://github.com/CottageLabs/dmponline-chef-recipe.git"
+#  :path => '../dmponline-chef-recipe'
 
 cookbook 'rvm',
   :git => 'https://github.com/fnichol/chef-rvm'

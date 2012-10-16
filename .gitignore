@@ -4,3 +4,4 @@
 # Using librarian-chef, so don't include cookbooks
 /cookbooks/
 /tmp/
+.vagrant
