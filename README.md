@@ -3,7 +3,7 @@ DMPOnline + Sword "Getting Started" Chef Repository
 
 Introduction
 ------------
-This Chef repository allows you to quickly build and provision an instance of DMPOnline + Sword on a virtual server, either running locally using Virtual Box or on the cloud (e.g. via OpenStack, Rackspace or AWS).
+This Chef repository allows you to quickly build and provision an instance of [DMPOnline](https://github.com/CottageLabs/dmponline) + [Simple Sword Server](https://github.com/swordapp/Simple-Sword-Server) on a virtual server, either running locally using Virtual Box or on the cloud (e.g. via OpenStack, Rackspace or AWS).
 
 Requirements
 ------------
