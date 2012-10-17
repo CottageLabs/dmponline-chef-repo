@@ -106,3 +106,4 @@ Deploying to OpenStack using Hosted Chef
 
 		knife openstack server list
 
+*TODO: add any further steps for Openstack*
