@@ -11,8 +11,8 @@ Vagrant::Config.run do |config|
   config.vm.box = "centos63_minimal"
   config.vm.box_url = "https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box"
   config.vm.host_name = "dmponline-vagrant"
-  config.vm.forward_port 80, 8080  #forward port 80 on virtual machine to port 8080 on host machine
-  config.vm.forward_port 81, 8081  #forward port 81 on virtual machine to port 8081 on host machine  
+  config.vm.forward_port 80, 80  #forward port 80 on virtual machine to port 80 on host machine
+  config.vm.forward_port 8080, 8080  #forward port 8080 on virtual machine to port 8080 on host machine  
 
 
   config.vm.provision :chef_solo do |chef|
