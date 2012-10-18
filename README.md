@@ -39,7 +39,7 @@ Deploying to a local Virtual Box with Vagrant and Chef Solo
 		cd ~/projects/dmponline-chef-repo
 		librarian-chef install
 
-4. Review the Vagrantfile with your favourite text editor. Pay special attention to the base box used (e.g. `centos63_minimal` and its associated URL), and also to the IP port mappings assigned to the virtual machine (e.g. http://localhost:8080/ and http://localhost:8081/). Adjust these settings to suit your requirements and base box availability. See [www.vagrantbox.es](http://www.vagrantbox.es) for a list of base boxes. A minimal Centos 6.3 is recommended, but, with tweaking, the recipe should work with most versions of Linux.
+4. Review the Vagrantfile with your favourite text editor. Pay special attention to the base box used (e.g. `centos63_minimal` and its associated URL), and also to the IP port mappings assigned to the virtual machine (e.g. http://localhost:80/ and http://localhost:8080/). Adjust these settings to suit your requirements and base box availability. See [www.vagrantbox.es](http://www.vagrantbox.es) for a list of base boxes. A minimal Centos 6.3 is recommended, but, with tweaking, the recipe should work with most versions of Linux.
 
 		vi Vagrantfile
 
@@ -47,7 +47,7 @@ Deploying to a local Virtual Box with Vagrant and Chef Solo
 
 		vagrant up
 
-6. If the command completed successfully, open up a web browser and navigate to [http://localhost:8081/](http://localhost:8081) (or whatever you set for the IP address/port mapping in the Vagrantfile). If everything worked, you should see the DMPOnline welcome page!
+6. If the command completed successfully, open up a web browser and navigate to [http://localhost:80/](http://localhost:80) (or whatever you set for the IP address/port mapping in the Vagrantfile). If everything worked, you should see the DMPOnline welcome page!
 
  ![DMPOnline screen shot](https://raw.github.com/CottageLabs/dmponline-chef-repo/master/images/dmponline.png "DMPOnline screen shot")
 
