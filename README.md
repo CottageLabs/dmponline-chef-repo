@@ -74,10 +74,7 @@ Deploying to OpenStack using Hosted Chef
 		cache_type               'BasicFile'
 		cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
 		cookbook_path            ["#{current_dir}/../chef/cookbooks"]
-		# ADD YOUR OPENSTACK KEY REFERENCES HERE
-		knife[:openstack_username] = "Your OpenStack Dashboard username"
-		knife[:openstack_password] = "Your OpenStack Dashboard password"
-		knife[:openstack_auth_url] = "http://cloud.mycompany.com:5000/v2.0/tokens"
+
 
  Verify that your knife.rb file is correctly configured for Hosted Chef by running:
 
@@ -98,12 +95,33 @@ Deploying to OpenStack using Hosted Chef
 
 		knife cookbook upload --all
 
-6. Generate an SSH key-pair on the OpenStack dashboard and then bootstrap a new instance on OpenStack
+6. Create a Chef role and name the file dmponline.json
 
-		knife openstack server create -S KEYPAIR -N TESTNODE -f 1 -I 52 -d centos5-gems
+		
+		{
+  		 "run_list": [
+    			"recipe[dmponline]"
+  		 ],
+  		 "json_class": "Chef::Role",
+  		 "env_run_lists": {
+  		 },
+  		 "chef_type": "role",
+  		 "override_attributes": {
+  		 },
+  		 "description": "",
+  		 "name": "dmponline",
+  		 "default_attributes": {
+  		 }
+		}
 
-7. Check that the instance has loaded
+7. Upload the role to your Hosted Chef
 
-		knife openstack server list
+		
+		knife role from file /roles/dmponline.json
+		
+8. Generate an SSH key-pair on the OpenStack dashboard (mykey.pem) and save on your local chef folder then bootstrap
 
-*TODO: add any further steps for Openstack*
+		knife bootstrap $OpenStack_VM_IP -x $OpenStack_VM_ACCOUNT --no-host-key-verify -i mykey.pem --sudo -r 'role[dmponline]'
+
+9. If everything worked well you will be able to open a web browser and point to your VM's IP address
+
